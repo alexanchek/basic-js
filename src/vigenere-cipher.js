@@ -1,14 +1,28 @@
 const CustomError = require("../extensions/custom-error");
 
 class VigenereCipheringMachine {
-  encrypt() {
-    throw new CustomError('Not implemented');
-    // remove line with error and write your code here
+  constructor(value) {
+    this.value = value;
+  }
+
+  encrypt(message, key) {
+    if (!message || !key) {
+      throw new Error("Something went bad :( Please, check your parameters")
+    }
+
+    message = message.split('');
+    let codeLine = [];
+
+    for (let i=0; i<message.length; i++) {
+
+    }
+
+
   }    
   decrypt() {
-    throw new CustomError('Not implemented');
-    // remove line with error and write your code here
-  }
-}
+    if (!message || !key) {
+      throw new Error("Something went bad :( Please, check your parameters")
+    }
+}}
 
 module.exports = VigenereCipheringMachine;
