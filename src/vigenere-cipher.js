@@ -2,7 +2,7 @@ const CustomError = require("../extensions/custom-error");
 
 class VigenereCipheringMachine {
   constructor(value) {
-    if (value === undefined) {
+    if (value === undefined || null) {
       this.value = true;
     } else {
       this.value = value;
