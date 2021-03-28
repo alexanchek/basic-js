@@ -30,7 +30,7 @@ class VigenereCipheringMachine {
   
   
         let formulaVignere = alphabet.indexOf(message[i]) + alphabet.indexOf(key[i]) % 26;
-        if (formulaVignere < 25) {
+        if (formulaVignere < 26) {
           resultLine.push(alphabet[formulaVignere]);
         } else {
           resultLine.push(alphabet[formulaVignere - 26]);
@@ -40,7 +40,7 @@ class VigenereCipheringMachine {
         key.splice(i, 0, ' ');
       }
     }
-    if (this.value) {
+    if (this.value === true) {
       return resultLine.join('').toUpperCase();
     } else {
       return resultLine.reverse().join('').toUpperCase();
@@ -80,7 +80,11 @@ class VigenereCipheringMachine {
       }
     }
 
-    return resultLine.toUpperCase();
+    if (this.value === true) {
+      return resultLine.split("").join('').toUpperCase();
+    } else {
+      return resultLine.split('').reverse().join('').toUpperCase();
+    }
   }
 }
 
