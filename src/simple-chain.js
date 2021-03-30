@@ -14,7 +14,7 @@ const chainMaker = {
   
   removeLink(position) {
   	if (this.chain[position] != undefined) {
-    	    this.chain.splice(position,1);
+    	    this.chain.splice(position-1,1);
    				 return this;
     } else {
     	throw new Error ("Sorry, this is a wrong position!")
